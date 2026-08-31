@@ -5,7 +5,6 @@ html<!DOCTYPE html>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SIELPRO - Bonifiche Elettroniche Ambientali & TSCM</title>
     <style>
-        /* Reset e Stili Globali */
         * {
             margin: 0;
             padding: 0;
@@ -20,7 +19,6 @@ html<!DOCTYPE html>
             line-height: 1.6;
         }
 
-        /* Navigazione */
         header {
             position: fixed;
             top: 0;
@@ -59,9 +57,8 @@ html<!DOCTYPE html>
             color: #38bdf8;
         }
 
-        /* Sezioni Generiche */
         section {
-            padding: 120px 20px 80px 20px;
+            padding: 140px 20px 80px 20px;
             min-height: 80vh;
             display: flex;
             flex-direction: column;
@@ -105,10 +102,9 @@ html<!DOCTYPE html>
             font-size: 1.3rem;
         }
 
-        /* Sezione Home / Hero */
         #home {
             text-align: center;
-            padding-top: 160px;
+            padding-top: 180px;
         }
 
         #home h1 {
@@ -142,11 +138,10 @@ html<!DOCTYPE html>
             margin-bottom: 35px;
         }
 
-        /* RADAR ANIMATO IN CSS */
         .radar-container {
             position: relative;
-            width: 250px;
-            height: 250px;
+            width: 220px;
+            height: 220px;
             margin: 40px auto 0 auto;
             background: radial-gradient(circle, rgba(15,23,42,1) 0%, rgba(30,41,59,1) 100%);
             border-radius: 50%;
@@ -202,7 +197,6 @@ html<!DOCTYPE html>
             50% { opacity: 1; }
         }
 
-        /* Bottoni */
         .cta-buttons {
             display: flex;
             gap: 20px;
@@ -234,7 +228,6 @@ html<!DOCTYPE html>
             opacity: 0.9;
         }
 
-        /* Sezione Contatti */
         .contact-info {
             background-color: #1e293b;
             padding: 40px;
@@ -268,7 +261,6 @@ html<!DOCTYPE html>
             color: #25d366;
         }
 
-        /* Footer */
         footer {
             background-color: #020617;
             text-align: center;
@@ -278,7 +270,6 @@ html<!DOCTYPE html>
             color: #64748b;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             #home h1 { font-size: 2.5rem; }
             .nav-container { flex-direction: column; gap: 15px; }
@@ -288,7 +279,6 @@ html<!DOCTYPE html>
 </head>
 <body>
 
-    <!-- Intestazione e Menu -->
     <header>
         <div class="nav-container">
             <div class="logo">SIELPRO</div>
@@ -301,7 +291,6 @@ html<!DOCTYPE html>
         </div>
     </header>
 
-    <!-- Sezione 1: Home -->
     <section id="home">
         <div class="badge-year">Dal 1989 al servizio della sicurezza</div>
         <h1>Bonifiche Elettroniche <span>TSCM</span></h1>
@@ -311,7 +300,6 @@ html<!DOCTYPE html>
             <a href="#contatti" class="btn btn-secondary">Richiedi un Preventivo</a>
         </div>
         
-        <!-- Scanner Radar Grafico in CSS -->
         <div class="radar-container">
             <div class="radar-line"></div>
             <div class="radar-circle c1"></div>
@@ -322,7 +310,6 @@ html<!DOCTYPE html>
         </div>
     </section>
 
-    <!-- Sezione 2: Servizi -->
     <section id="servizi">
         <h2>I Nostri Servizi Specializzati</h2>
         <div class="grid">
@@ -341,9 +328,12 @@ html<!DOCTYPE html>
         </div>
     </section>
 
-    <!-- Sezione 3: Chi Siamo -->
     <section id="chi-siamo">
         <h2>Azienda SIELPRO</h2>
-        <p style="max-width: 800px; text-align: center; color: #94a3b8; font-size: 1.1rem;">
+        <p style="max-width: 800px; text-align: center; color: #94a3b8; font-size: 1.1rem; margin-top: 20px;">
+            Fondati nel <strong>1989</strong>, siamo professionisti esperti nel settore della sicurezza elettronica e contromisure tecnologiche. Con quasi quarant'anni di esperienza e strumentazione di ultima generazione, assistiamo realtà aziendali e privati per neutralizzare qualsiasi minaccia alla privacy delle informazioni, garantendo interventi rapidi, mirati e nella massima discrezione.
+        </p>
+    </section>
 
+    <section id="contatti">
 

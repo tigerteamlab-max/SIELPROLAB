@@ -187,26 +187,56 @@
             font-size: 14px;
         }
 
-        /* Classe per nascondere la lingua non selezionata */
-        .lang-en {
-            display: none;
+        /* Responsive */
+        @media (max-width: 768px) {
+            header .container {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            .hero h2 {
+                font-size: 28px;
+            }
+        }
+
+        /* ==========================================
+           LOGICA DI CAMBIO LINGUA ROBUSTA (CSS PURE)
+           ========================================== */
+        
+        /* Di base (quando il body è in modalità IT), nascondiamo le parti inglesi */
+        body.lang-mode-it .en-text {
+            display: none !important;
+        }
+        
+        /* Quando il body passa in modalità EN, nascondiamo l'italiano e mostriamo l'inglese */
+        body.lang-mode-en .it-text {
+            display: none !important;
+        }
+        body.lang-mode-en .en-text {
+            display: block !important;
+        }
+        
+        /* Regola speciale per i testi all'interno dei pulsanti (inline) */
+        body.lang-mode-en span.en-text {
+            display: inline !important;
         }
     </style>
 </head>
-<body>
+<!-- Inizializziamo il body con la classe della lingua italiana attiva -->
+<body class="lang-mode-it">
 
     <!-- Header -->
     <header>
         <div class="container">
             <div class="logo">
                 <h1>SIEL<span>PRO</span></h1>
-                <div class="tagline lang-it">Specialisti in tecnologia e sicurezza</div>
-                <div class="tagline lang-en">Specialists in technology and security</div>
+                <div class="tagline it-text">Specialisti in tecnologia e sicurezza</div>
+                <div class="tagline en-text">Specialists in technology and security</div>
             </div>
             <!-- Pulsanti Scelta Lingua -->
             <div class="lang-switcher">
-                <button id="btn-it" class="lang-btn active" onclick="changeLanguage('it')">IT</button>
-                <button id="btn-en" class="lang-btn" onclick="changeLanguage('en')">EN</button>
+                <button id="btn-it" class="lang-btn active" onclick="setLanguage('it')">IT</button>
+                <button id="btn-en" class="lang-btn" onclick="setLanguage('en')">EN</button>
             </div>
         </div>
     </header>
@@ -214,11 +244,11 @@
     <!-- Sezione Principale / Chi Siamo -->
     <section class="hero">
         <div class="container">
-            <div class="lang-it">
+            <div class="it-text">
                 <h2>Bonifiche Elettroniche Ambientali</h2>
                 <p><strong>Dal 1989</strong> offriamo soluzioni professionali ad alto contenuto tecnologico per la tutela della tua privacy e la sicurezza delle tue comunicazioni.</p>
             </div>
-            <div class="lang-en">
+            <div class="en-text">
                 <h2>Technical Surveillance Counter-Measures (TSCM)</h2>
                 <p><strong>Since 1989</strong> we have been offering high-tech professional solutions to protect your privacy and secure your communications.</p>
             </div>
@@ -228,17 +258,17 @@
     <!-- Sezione Competenze/Servizi -->
     <section class="services">
         <div class="container">
-            <h3 class="lang-it">I Nostri Settori di Specializzazione</h3>
-            <h3 class="lang-en">Our Core Areas of Expertise</h3>
+            <h3 class="it-text">I Nostri Settori di Specializzazione</h3>
+            <h3 class="en-text">Our Core Areas of Expertise</h3>
             
             <div class="grid">
                 <!-- Servizio 1 -->
                 <div class="card">
-                    <div class="lang-it">
+                    <div class="it-text">
                         <h4>Bonifiche Ambientali</h4>
                         <p>Rilevamento e neutralizzazione di microspie, microfoni, localizzatori GPS e sistemi di intercettazione occultati.</p>
                     </div>
-                    <div class="lang-en">
+                    <div class="en-text">
                         <h4>TSCM / Bug Sweeping</h4>
                         <p>Detection and neutralization of hidden bugs, microphones, GPS trackers, and covert eavesdropping systems.</p>
                     </div>
@@ -246,11 +276,11 @@
                 
                 <!-- Servizio 2 -->
                 <div class="card">
-                    <div class="lang-it">
+                    <div class="it-text">
                         <h4>Telecomunicazioni</h4>
                         <p>Progettazione, installazione e manutenzione di sistemi e reti di comunicazione sicuri ed efficienti.</p>
                     </div>
-                    <div class="lang-en">
+                    <div class="en-text">
                         <h4>Telecommunications</h4>
                         <p>Design, installation, and maintenance of secure and efficient communication systems and networks.</p>
                     </div>
@@ -258,36 +288,11 @@
                 
                 <!-- Servizio 3 -->
                 <div class="card">
-                    <div class="lang-it">
+                    <div class="it-text">
                         <h4>Sicurezza Elettronica</h4>
                         <p>Sistemi avanzati anti-intrusione, controllo accessi e videosorveglianza professionale per privati e aziende.</p>
                     </div>
-                    <div class="lang-en">
+                    <div class="en-text">
                         <h4>Electronic Security</h4>
                         <p>Advanced anti-intrusion systems, access control, and professional video surveillance for individuals and corporate clients.</p>
                     </div>
-                </div>
-                
-                <!-- Servizio 4 -->
-                <div class="card">
-                    <div class="lang-it">
-                        <h4>Informatica</h4>
-                        <p>Consulenza IT, sicurezza delle reti informatiche e protezione dei dati aziendali e personali contro minacce digitali.</p>
-                    </div>
-                    <div class="lang-en">
-                        <h4>Information Technology</h4>
-                        <p>IT consulting, network security, and corporate/personal data protection against digital threats.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sezione Contatti -->
-    <section class="contact">
-        <div class="container">
-            <div class="lang-it">
-                <h3>Richiedi una Consulenza Riservata</h3>
-                <p>Mettiti in contatto con i nostri specialisti per ricevere supporto o richiedere un intervento rapido.</p>
-            </div>
-            <div class="lang-en">

@@ -1,4 +1,4 @@
-html<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
@@ -51,7 +51,7 @@ html<!DOCTYPE html>
             font-weight: 300;
         }
 
-        /* Selettore di Lingua */
+        /* Selettore di Lingua (Link puri) */
         .lang-switcher {
             display: flex;
             gap: 10px;
@@ -61,12 +61,12 @@ html<!DOCTYPE html>
             border: 1px solid #00b4d8;
             color: #fff;
             padding: 5px 12px;
-            cursor: pointer;
+            text-decoration: none;
             border-radius: 4px;
             font-weight: bold;
             transition: all 0.3s ease;
         }
-        .lang-btn:hover, .lang-btn.active {
+        .lang-btn:hover {
             background-color: #00b4d8;
             color: #0a192f;
         }
@@ -199,29 +199,44 @@ html<!DOCTYPE html>
             }
         }
 
-        /* ==========================================
-           GESTIONE MOSTRA/NASCONDI TESTI
-           ========================================== */
-        /* Stato iniziale (Italiano): nasconde i testi inglesi */
-        body.lang-it .en-text {
-            display: none !important;
-        }
+        /* ===================================================
+           LOGICA MULTILINGUA 100% CSS (SENZA JAVASCRIPT)
+           =================================================== */
         
-        /* Stato alternativo (Inglese): nasconde i testi italiani e mostra quelli inglesi */
-        body.lang-en .it-text {
+        /* Di default mostriamo l'italiano e nascondiamo l'inglese */
+        .en-text { display: none !important; }
+        .it-text { display: block !important; }
+        span.it-text { display: inline !important; }
+        #btn-it { background-color: #00b4d8; color: #0a192f; }
+
+        /* Quando l'URL termina con #en (l'utente clicca su EN) */
+        html:has(#en:target) .it-text,
+        body:has(#en:target) .it-text {
             display: none !important;
         }
-        body.lang-en .en-text {
+        html:has(#en:target) .en-text,
+        body:has(#en:target) .en-text {
             display: block !important;
         }
-        
-        /* Regola specifica per non rompere l'allineamento dei testi dentro i bottoni */
-        body.lang-en span.en-text {
+        html:has(#en:target) span.en-text,
+        body:has(#en:target) span.en-text {
             display: inline !important;
         }
+        /* Gestione visiva dei pulsanti attivi tramite CSS */
+        html:has(#en:target) #btn-it, body:has(#en:target) #btn-it { background-color: transparent; color: #fff; }
+        html:has(#en:target) #btn-en, body:has(#en:target) #btn-en { background-color: #00b4d8; color: #0a192f; }
+
+        /* Supporto per browser vecchi che non leggono :has (usiamo il classico :target) */
+        #en:target ~ * .it-text { display: none !important; }
+        #en:target ~ * .en-text { display: block !important; }
+        #en:target ~ * span.en-text { display: inline !important; }
     </style>
 </head>
-<body class="lang-it"> <!-- Iniziamo in modalità Italiano -->
+<body>
+
+    <!-- Target invisibili per attivare il cambio lingua via CSS -->
+    <div id="it"></div>
+    <div id="en"></div>
 
     <!-- Header -->
     <header>
@@ -231,10 +246,10 @@ html<!DOCTYPE html>
                 <div class="tagline it-text">Specialisti in tecnologia e sicurezza</div>
                 <div class="tagline en-text">Specialists in technology and security</div>
             </div>
-            <!-- Pulsanti Selezione Lingua -->
+            <!-- Pulsanti Selezione Lingua (Link puri che cambiano l'URL) -->
             <div class="lang-switcher">
-                <button id="btn-it" class="lang-btn active">IT</button>
-                <button id="btn-en" class="lang-btn">EN</button>
+                <a href="#it" id="btn-it" class="lang-btn">IT</a>
+                <a href="#en" id="btn-en" class="lang-btn">EN</a>
             </div>
         </div>
     </header>
@@ -280,21 +295,3 @@ html<!DOCTYPE html>
                     </div>
                     <div class="en-text">
                         <h4>Telecommunications</h4>
-                        <p>Design, installation, and maintenance of secure and efficient communication systems and networks.</p>
-                    </div>
-                </div>
-                
-                <!-- Servizio 3 -->
-                <div class="card">
-                    <div class="it-text">
-                        <h4>Sicurezza Elettronica</h4>
-                        <p>Sistemi avanzati anti-intrusione, controllo accessi e videosorveglianza professionale per privati e aziende.</p>
-                    </div>
-                    <div class="en-text">
-                        <h4>Electronic Security</h4>
-                        <p>Advanced anti-intrusion systems, access control, and professional video surveillance for individuals and corporate clients.</p>
-                    </div>
-                </div>
-                
-                <!-- Servizio 4 -->
-                <div class="card">

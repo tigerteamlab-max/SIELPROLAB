@@ -142,22 +142,64 @@ html<!DOCTYPE html>
             margin-bottom: 35px;
         }
 
-        /* Immagine d'impatto nella Home */
-        .hero-image-container {
-            width: 100%;
-            max-width: 800px;
-            margin-top: 40px;
-            border-radius: 12px;
+        /* RADAR ANIMATO IN CSS (Sostituisce l'immagine esterna) */
+        .radar-container {
+            position: relative;
+            width: 250px;
+            height: 250px;
+            margin: 40px auto 0 auto;
+            background: radial-gradient(circle, rgba(15,23,42,1) 0%, rgba(30,41,59,1) 100%);
+            border-radius: 50%;
+            border: 2px solid #334155;
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            border: 1px solid #1e293b;
         }
 
-        .hero-image-container img {
-            width: 100%;
-            height: auto;
-            display: block;
-            object-fit: cover;
+        .radar-line {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 50%;
+            height: 2px;
+            background: linear-gradient(to right, rgba(56, 189, 248, 1), rgba(56, 189, 248, 0));
+            transform-origin: left center;
+            animation: radar-sweep 4s linear infinite;
+        }
+
+        .radar-circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px dashed rgba(56, 189, 248, 0.3);
+            border-radius: 50%;
+        }
+
+        .c1 { width: 40%; height: 40%; }
+        .c2 { width: 70%; height: 70%; }
+        .c3 { width: 95%; height: 95%; }
+
+        .radar-dot {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background-color: #25d366;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #25d366;
+            animation: blink 2s ease-in-out infinite;
+        }
+
+        .dot1 { top: 30%; left: 40%; animation-delay: 0.5s; }
+        .dot2 { top: 65%; left: 70%; animation-delay: 1.2s; }
+
+        @keyframes radar-sweep {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 1; }
         }
 
         /* Bottoni */
@@ -258,9 +300,14 @@ html<!DOCTYPE html>
             <a href="#contatti" class="btn btn-secondary">Richiedi un Preventivo</a>
         </div>
         
-        <!-- Contenitore dell'Immagine TSCM -->
-        <div class="hero-image-container">
-            <img src="https://shutterstock.com" alt="TSCM Cyber Security Network">
+        <!-- Scanner Radar Grafico in CSS -->
+        <div class="radar-container">
+            <div class="radar-line"></div>
+            <div class="radar-circle c1"></div>
+            <div class="radar-circle c2"></div>
+            <div class="radar-circle c3"></div>
+            <div class="radar-dot dot1"></div>
+            <div class="radar-dot dot2"></div>
         </div>
     </section>
 
@@ -287,30 +334,4 @@ html<!DOCTYPE html>
     <section id="chi-siamo">
         <h2>Azienda SIELPRO</h2>
         <p style="max-width: 800px; text-align: center; color: #94a3b8; font-size: 1.1rem;">
-            Fondati nel <strong>1989</strong>, siamo professionisti esperti nel settore della sicurezza elettronica e contromisure tecnologiche. Con quasi quarant'anni di esperienza e strumentazione di ultima generazione, assistiamo realtà aziendali e privati per neutralizzare qualsiasi minaccia alla privacy delle informazioni, garantendo interventi rapidi, mirati e nella massima discrezione.
-        </p>
-    </section>
 
-    <!-- Sezione 4: Contatti -->
-    <section id="contatti">
-        <h2>Contattaci Subito</h2>
-        <p>Interventi urgenti e preventivi riservati</p>
-        <div class="contact-info">
-            <div class="contact-item">
-                <p>🟢 <strong>WhatsApp / Tel:</strong></p>
-                <a href="https://wa.me" target="_blank">+39 340 630 9413</a>
-            </div>
-            <div class="contact-item">
-                <p>📧 <strong>Email Aziendale:</strong></p>
-                <a href="mailto:sielprolab@gmail.com">sielprolab@gmail.com</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 SIELPRO - Bonifiche Elettroniche Ambientali & TSCM. Tutti i diritti riservati.</p>
-    </footer>
-
-</body>
-</html>

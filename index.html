@@ -187,16 +187,9 @@
             font-size: 14px;
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            header .container {
-                flex-direction: column;
-                text-align: center;
-                gap: 15px;
-            }
-            .hero h2 {
-                font-size: 28px;
-            }
+        /* Classe per nascondere la lingua non selezionata */
+        .lang-en {
+            display: none;
         }
     </style>
 </head>
@@ -207,12 +200,13 @@
         <div class="container">
             <div class="logo">
                 <h1>SIEL<span>PRO</span></h1>
-                <div class="tagline" data-it="Specialisti in tecnologia e sicurezza" data-en="Specialists in technology and security">Specialisti in tecnologia e sicurezza</div>
+                <div class="tagline lang-it">Specialisti in tecnologia e sicurezza</div>
+                <div class="tagline lang-en">Specialists in technology and security</div>
             </div>
             <!-- Pulsanti Scelta Lingua -->
             <div class="lang-switcher">
-                <button id="btn-it" class="lang-btn active" onclick="setLanguage('it')">IT</button>
-                <button id="btn-en" class="lang-btn" onclick="setLanguage('en')">EN</button>
+                <button id="btn-it" class="lang-btn active" onclick="changeLanguage('it')">IT</button>
+                <button id="btn-en" class="lang-btn" onclick="changeLanguage('en')">EN</button>
             </div>
         </div>
     </header>
@@ -220,46 +214,70 @@
     <!-- Sezione Principale / Chi Siamo -->
     <section class="hero">
         <div class="container">
-            <h2 data-it="Bonifiche Elettroniche Ambientali" data-en="Technical Surveillance Counter-Measures (TSCM)">Bonifiche Elettroniche Ambientali</h2>
-            <p data-it="<strong>Dal 1989</strong> offriamo soluzioni professionali ad alto contenuto tecnologico per la tutela della tua privacy e la sicurezza delle tue comunicazioni." 
-               data-en="<strong>Since 1989</strong> we have been offering high-tech professional solutions to protect your privacy and secure your communications.">
-                <strong>Dal 1989</strong> offriamo soluzioni professionali ad alto contenuto tecnologico per la tutela della tua privacy e la sicurezza delle tue comunicazioni.
-            </p>
+            <div class="lang-it">
+                <h2>Bonifiche Elettroniche Ambientali</h2>
+                <p><strong>Dal 1989</strong> offriamo soluzioni professionali ad alto contenuto tecnologico per la tutela della tua privacy e la sicurezza delle tue comunicazioni.</p>
+            </div>
+            <div class="lang-en">
+                <h2>Technical Surveillance Counter-Measures (TSCM)</h2>
+                <p><strong>Since 1989</strong> we have been offering high-tech professional solutions to protect your privacy and secure your communications.</p>
+            </div>
         </div>
     </section>
 
     <!-- Sezione Competenze/Servizi -->
     <section class="services">
         <div class="container">
-            <h3 data-it="I Nostri Settori di Specializzazione" data-en="Our Core Areas of Expertise">I Nostri Settori di Specializzazione</h3>
+            <h3 class="lang-it">I Nostri Settori di Specializzazione</h3>
+            <h3 class="lang-en">Our Core Areas of Expertise</h3>
+            
             <div class="grid">
+                <!-- Servizio 1 -->
                 <div class="card">
-                    <h4 data-it="Bonifiche Ambientali" data-en="TSCM / Bug Sweeping">Bonifiche Ambientali</h4>
-                    <p data-it="Rilevamento e neutralizzazione di microspie, microfoni, localizzatori GPS e sistemi di intercettazione occultati." 
-                       data-en="Detection and neutralization of hidden bugs, microphones, GPS trackers, and covert eavesdropping systems.">
-                       Rilevamento e neutralizzazione di microspie, microfoni, localizzatori GPS e sistemi di intercettazione occultati.
-                    </p>
+                    <div class="lang-it">
+                        <h4>Bonifiche Ambientali</h4>
+                        <p>Rilevamento e neutralizzazione di microspie, microfoni, localizzatori GPS e sistemi di intercettazione occultati.</p>
+                    </div>
+                    <div class="lang-en">
+                        <h4>TSCM / Bug Sweeping</h4>
+                        <p>Detection and neutralization of hidden bugs, microphones, GPS trackers, and covert eavesdropping systems.</p>
+                    </div>
                 </div>
+                
+                <!-- Servizio 2 -->
                 <div class="card">
-                    <h4 data-it="Telecomunicazioni" data-en="Telecommunications">Telecomunicazioni</h4>
-                    <p data-it="Progettazione, installazione e manutenzione di sistemi e reti di comunicazione sicuri ed efficienti." 
-                       data-en="Design, installation, and maintenance of secure and efficient communication systems and networks.">
-                       Progettazione, installazione e manutenzione di sistemi e reti di comunicazione sicuri ed efficienti.
-                    </p>
+                    <div class="lang-it">
+                        <h4>Telecomunicazioni</h4>
+                        <p>Progettazione, installazione e manutenzione di sistemi e reti di comunicazione sicuri ed efficienti.</p>
+                    </div>
+                    <div class="lang-en">
+                        <h4>Telecommunications</h4>
+                        <p>Design, installation, and maintenance of secure and efficient communication systems and networks.</p>
+                    </div>
                 </div>
+                
+                <!-- Servizio 3 -->
                 <div class="card">
-                    <h4 data-it="Sicurezza Elettronica" data-en="Electronic Security">Sicurezza Elettronica</h4>
-                    <p data-it="Sistemi avanzati anti-intrusione, controllo accessi e videosorveglianza professionale per privati e aziende." 
-                       data-en="Advanced anti-intrusion systems, access control, and professional video surveillance for individuals and corporate clients.">
-                       Sistemi avanzati anti-intrusione, controllo accessi e videosorveglianza professionale per privati e aziende.
-                    </p>
+                    <div class="lang-it">
+                        <h4>Sicurezza Elettronica</h4>
+                        <p>Sistemi avanzati anti-intrusione, controllo accessi e videosorveglianza professionale per privati e aziende.</p>
+                    </div>
+                    <div class="lang-en">
+                        <h4>Electronic Security</h4>
+                        <p>Advanced anti-intrusion systems, access control, and professional video surveillance for individuals and corporate clients.</p>
+                    </div>
                 </div>
+                
+                <!-- Servizio 4 -->
                 <div class="card">
-                    <h4 data-it="Informatica" data-en="Information Technology">Informatica</h4>
-                    <p data-it="Consulenza IT, sicurezza delle reti informatiche e protezione dei dati aziendali e personali contro minacce digitali." 
-                       data-en="IT consulting, network security, and corporate/personal data protection against digital threats.">
-                       Consulenza IT, sicurezza delle reti informatiche e protezione dei dati aziendali e personali contro minacce digitali.
-                    </p>
+                    <div class="lang-it">
+                        <h4>Informatica</h4>
+                        <p>Consulenza IT, sicurezza delle reti informatiche e protezione dei dati aziendali e personali contro minacce digitali.</p>
+                    </div>
+                    <div class="lang-en">
+                        <h4>Information Technology</h4>
+                        <p>IT consulting, network security, and corporate/personal data protection against digital threats.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -268,3 +286,8 @@
     <!-- Sezione Contatti -->
     <section class="contact">
         <div class="container">
+            <div class="lang-it">
+                <h3>Richiedi una Consulenza Riservata</h3>
+                <p>Mettiti in contatto con i nostri specialisti per ricevere supporto o richiedere un intervento rapido.</p>
+            </div>
+            <div class="lang-en">

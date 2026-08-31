@@ -61,7 +61,7 @@ html<!DOCTYPE html>
 
         /* Sezioni Generiche */
         section {
-            padding: 100px 20px 80px 20px;
+            padding: 120px 20px 80px 20px;
             min-height: 80vh;
             display: flex;
             flex-direction: column;
@@ -114,18 +114,50 @@ html<!DOCTYPE html>
         #home h1 {
             font-size: 3.5rem;
             color: #ffffff;
-            margin-bottom: 15px;
+            margin-bottom: 5px;
         }
 
         #home h1 span {
             color: #38bdf8;
         }
 
+        .badge-year {
+            display: inline-block;
+            background-color: rgba(56, 189, 248, 0.1);
+            color: #38bdf8;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
         #home p {
             font-size: 1.2rem;
             color: #94a3b8;
             max-width: 700px;
-            margin-bottom: 40px;
+            margin-bottom: 35px;
+        }
+
+        /* Immagine d'impatto nella Home */
+        .hero-image-container {
+            width: 100%;
+            max-width: 800px;
+            margin-top: 40px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid #1e293b;
+        }
+
+        .hero-image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
         }
 
         /* Bottoni */
@@ -147,7 +179,7 @@ html<!DOCTYPE html>
         }
 
         .btn-primary {
-            background-color: #25d366; /* Colore WhatsApp */
+            background-color: #25d366;
             color: #ffffff;
         }
 
@@ -218,11 +250,17 @@ html<!DOCTYPE html>
 
     <!-- Sezione 1: Home -->
     <section id="home">
+        <div class="badge-year">Dal 1989 al servizio della sicurezza</div>
         <h1>Bonifiche Elettroniche <span>TSCM</span></h1>
         <p>Azienda SIELPRO. Proteggiamo la riservatezza e la sicurezza della tua azienda da intercettazioni ambientali, microspie e minacce informatiche.</p>
         <div class="cta-buttons">
             <a href="https://wa.me" class="btn btn-primary" target="_blank">💬 SOS WhatsApp Rapido</a>
             <a href="#contatti" class="btn btn-secondary">Richiedi un Preventivo</a>
+        </div>
+        
+        <!-- Contenitore dell'Immagine TSCM -->
+        <div class="hero-image-container">
+            <img src="https://shutterstock.com" alt="TSCM Cyber Security Network">
         </div>
     </section>
 
@@ -249,7 +287,7 @@ html<!DOCTYPE html>
     <section id="chi-siamo">
         <h2>Azienda SIELPRO</h2>
         <p style="max-width: 800px; text-align: center; color: #94a3b8; font-size: 1.1rem;">
-            Siamo professionisti esperti nel settore della sicurezza elettronica e contromisure tecnologiche. Con strumentazione di ultima generazione, assistiamo realtà aziendali e privati per neutralizzare qualsiasi minaccia alla privacy delle informazioni, garantendo interventi rapidi, mirati e nella massima discrezione.
+            Fondati nel <strong>1989</strong>, siamo professionisti esperti nel settore della sicurezza elettronica e contromisure tecnologiche. Con quasi quarant'anni di esperienza e strumentazione di ultima generazione, assistiamo realtà aziendali e privati per neutralizzare qualsiasi minaccia alla privacy delle informazioni, garantendo interventi rapidi, mirati e nella massima discrezione.
         </p>
     </section>
 

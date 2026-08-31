@@ -228,37 +228,40 @@ html<!DOCTYPE html>
             opacity: 0.9;
         }
 
-        .contact-info {
-            background-color: #1e293b;
-            padding: 40px;
-            border-radius: 12px;
-            border: 1px solid #334155;
-            text-align: center;
-            max-width: 600px;
-            width: 100%;
+        /* Nuova Formattazione Contatti Super Compatibile */
+        .direct-contacts {
             margin-top: 30px;
+            text-align: center;
+            width: 100%;
         }
 
-        .contact-item {
-            margin: 25px 0;
-            font-size: 1.2rem;
+        .contact-block {
+            margin: 20px auto;
+            padding: 15px;
+            max-width: 500px;
         }
 
-        .contact-item p {
-            margin-bottom: 5px;
+        .contact-label {
+            font-size: 1.1rem;
             color: #94a3b8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
         }
 
-        .contact-item a {
-            color: #38bdf8;
-            text-decoration: none;
+        .contact-link {
+            font-size: 1.6rem;
             font-weight: bold;
-            font-size: 1.4rem;
-            transition: color 0.3s;
+            text-decoration: none;
+            display: block;
+            transition: color 0.2s;
         }
 
-        .contact-item a:hover {
-            color: #25d366;
+        .wa-color { color: #25d366; }
+        .mail-color { color: #38bdf8; }
+
+        .contact-link:hover {
+            opacity: 0.8;
         }
 
         footer {
@@ -274,6 +277,7 @@ html<!DOCTYPE html>
             #home h1 { font-size: 2.5rem; }
             .nav-container { flex-direction: column; gap: 15px; }
             nav a { margin: 0 10px; }
+            .contact-link { font-size: 1.3rem; }
         }
     </style>
 </head>
@@ -330,10 +334,4 @@ html<!DOCTYPE html>
 
     <section id="chi-siamo">
         <h2>Azienda SIELPRO</h2>
-        <p style="max-width: 800px; text-align: center; color: #94a3b8; font-size: 1.1rem; margin-top: 20px;">
-            Fondati nel <strong>1989</strong>, siamo professionisti esperti nel settore della sicurezza elettronica e contromisure tecnologiche. Con quasi quarant'anni di esperienza e strumentazione di ultima generazione, assistiamo realtà aziendali e privati per neutralizzare qualsiasi minaccia alla privacy delle informazioni, garantendo interventi rapidi, mirati e nella massima discrezione.
-        </p>
-    </section>
-
-    <section id="contatti">
-        <h2>Contattaci Subito</h2>
+        <p style="max-width: 800px; text-align: center; color: #94a3b8; fon

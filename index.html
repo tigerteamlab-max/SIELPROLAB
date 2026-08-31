@@ -23,7 +23,18 @@
         .btn { padding: 12px 30px; border-radius: 6px; font-weight: bold; text-decoration: none; }
         .btn-primary { background-color: #25d366; color: white; }
         .btn-secondary { background-color: #38bdf8; color: #0f172a; }
-        .radar-box { width: 150px; height: 150px; border: 2px solid #38bdf8; border-radius: 50%; margin-top: 20px; box-shadow: 0 0 15px rgba(56,189,248,0.4); }
+        
+        /* NUOVO LOGO SCUDO CYBER-SECURITY ANIMATO */
+        .shield-container { position: relative; width: 140px; height: 160px; margin-top: 30px; display: flex; justify-content: center; align-items: center; }
+        .cyber-shield { width: 100px; height: 120px; background-color: transparent; border: 3px solid #38bdf8; border-radius: 10px 10px 50px 50px; box-shadow: 0 0 20px rgba(56, 189, 248, 0.3); position: relative; overflow: hidden; }
+        .shield-pulse { position: absolute; top: 50%; left: 50%; width: 10px; height: 10px; background-color: rgba(56, 189, 248, 0.4); border-radius: 50%; transform: translate(-50%, -50%); animation: shield-scan 2.5s infinite ease-out; }
+        .shield-core { width: 30px; height: 35px; background: #38bdf8; border-radius: 3px 3px 15px 15px; position: absolute; top: 35%; left: 50%; transform: translateX(-50%); box-shadow: 0 0 15px #38bdf8; }
+        
+        @keyframes shield-scan {
+            0% { width: 10px; height: 10px; opacity: 1; }
+            100% { width: 150px; height: 150px; opacity: 0; }
+        }
+
         .contact-box { background: #1e293b; border: 2px solid #38bdf8; padding: 30px; border-radius: 12px; margin-top: 20px; width: 100%; max-width: 500px; text-align: center; }
         .contact-link { font-size: 1.5rem; font-weight: bold; text-decoration: none; display: block; margin: 15px 0; }
         footer { background-color: #020617; text-align: center; padding: 30px 20px; border-top: 1px solid #1e293b; color: #64748b; font-size: 0.9rem; }
@@ -45,7 +56,14 @@
             <a href="https://wa.me" class="btn btn-primary" target="_blank">💬 WhatsApp</a>
             <a href="#contatti" class="btn btn-secondary">Contatti</a>
         </div>
-        <div class="radar-box"></div>
+        
+        <!-- Scudo Tecnologico -->
+        <div class="shield-container">
+            <div class="cyber-shield">
+                <div class="shield-pulse"></div>
+                <div class="shield-core"></div>
+            </div>
+        </div>
     </section>
 
     <section id="servizi">
@@ -61,7 +79,7 @@
         <h2>Azienda SIELPRO</h2>
         <p style="max-width: 800px; color: #94a3b8; font-size: 1.1rem;">Fondati nel 1989, siamo professionisti esperti nel settore della sicurezza elettronica e contromisure tecnologiche. Con strumentazione di ultima generazione garantiamo interventi rapidi e nella massima discrezione.</p>
     </section>
-    <section id="contatti">
+     <section id="contatti">
         <h2>Contattaci Subito</h2>
         <p style="color: #94a3b8;">Interventi urgenti e preventivi riservati</p>
         

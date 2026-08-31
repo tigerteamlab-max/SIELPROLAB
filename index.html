@@ -1,255 +1,20 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SIELPRO - Bonifiche Elettroniche Ambientali | Sicurezza e Telecomunicazioni</title>
-    <meta name="description" content="SIELPRO dal 1989 specialisti in telecomunicazioni, sicurezza elettronica, informatica e bonifiche elettroniche ambientali.">
-    <style>
-        /* Reset e Stili Generali */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        body {
-            background-color: #f4f7f9;
-            color: #333;
-            line-height: 1.6;
-        }
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        /* Header e Navigazione */
-        header {
-            background-color: #0a192f;
-            color: #fff;
-            padding: 20px 0;
-            border-bottom: 3px solid #00b4d8;
-        }
-        header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        .logo h1 {
-            font-size: 28px;
-            letter-spacing: 2px;
-            color: #fff;
-        }
-        .logo span {
-            color: #00b4d8;
-        }
-        .tagline {
-            font-size: 14px;
-            color: #ccd6f6;
-            font-weight: 300;
-        }
-
-        /* Selettore di Lingua (Link puri) */
-        .lang-switcher {
-            display: flex;
-            gap: 10px;
-        }
-        .lang-btn {
-            background-color: transparent;
-            border: 1px solid #00b4d8;
-            color: #fff;
-            padding: 5px 12px;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-        .lang-btn:hover {
-            background-color: #00b4d8;
-            color: #0a192f;
-        }
-
-        /* Sezione Hero (Introduzione) */
-        .hero {
-            background: linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.9)), url('https://unsplash.com') no-repeat center center/cover;
-            color: #fff;
-            padding: 80px 0;
-            text-align: center;
-        }
-        .hero h2 {
-            font-size: 36px;
-            margin-bottom: 15px;
-            color: #00b4d8;
-        }
-        .hero p {
-            font-size: 18px;
-            max-width: 800px;
-            margin: 0 auto 30px auto;
-        }
-
-        /* Sezione Servizi */
-        .services {
-            padding: 60px 0;
-            background-color: #fff;
-        }
-        .services h3 {
-            text-align: center;
-            font-size: 28px;
-            margin-bottom: 40px;
-            color: #0a192f;
-            position: relative;
-        }
-        .services h3::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 3px;
-            background-color: #00b4d8;
-            margin: 10px auto 0 auto;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-        .card {
-            background-color: #f8fafc;
-            padding: 30px;
-            border-radius: 8px;
-            border-left: 5px solid #0a192f;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            border-left-color: #00b4d8;
-        }
-        .card h4 {
-            margin-bottom: 10px;
-            color: #0a192f;
-            font-size: 20px;
-        }
-
-        /* Sezione Contatti */
-        .contact {
-            padding: 60px 0;
-            background-color: #0a192f;
-            color: #fff;
-            text-align: center;
-        }
-        .contact h3 {
-            font-size: 28px;
-            margin-bottom: 20px;
-        }
-        .contact p {
-            margin-bottom: 30px;
-            font-size: 16px;
-        }
-        .contact-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            padding: 15px 30px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background 0.3s ease;
-            font-size: 16px;
-        }
-        .btn-email {
-            background-color: #ffffff;
-            color: #0a192f;
-        }
-        .btn-email:hover {
-            background-color: #e2e8f0;
-        }
-        .btn-whatsapp {
-            background-color: #25D366;
-            color: #fff;
-        }
-        .btn-whatsapp:hover {
-            background-color: #128C7E;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #060d1a;
-            color: #8892b0;
-            text-align: center;
-            padding: 20px 0;
-            font-size: 14px;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            header .container {
-                flex-direction: column;
-                text-align: center;
-                gap: 15px;
+ .logo {
+                margin-bottom: 10px;
             }
             .hero h2 {
                 font-size: 28px;
             }
         }
-
-        /* ===================================================
-           LOGICA MULTILINGUA 100% CSS (SENZA JAVASCRIPT)
-           =================================================== */
-        
-        /* Di default mostriamo l'italiano e nascondiamo l'inglese */
-        .en-text { display: none !important; }
-        .it-text { display: block !important; }
-        span.it-text { display: inline !important; }
-        #btn-it { background-color: #00b4d8; color: #0a192f; }
-
-        /* Quando l'URL termina con #en (l'utente clicca su EN) */
-        html:has(#en:target) .it-text,
-        body:has(#en:target) .it-text {
-            display: none !important;
-        }
-        html:has(#en:target) .en-text,
-        body:has(#en:target) .en-text {
-            display: block !important;
-        }
-        html:has(#en:target) span.en-text,
-        body:has(#en:target) span.en-text {
-            display: inline !important;
-        }
-        /* Gestione visiva dei pulsanti attivi tramite CSS */
-        html:has(#en:target) #btn-it, body:has(#en:target) #btn-it { background-color: transparent; color: #fff; }
-        html:has(#en:target) #btn-en, body:has(#en:target) #btn-en { background-color: #00b4d8; color: #0a192f; }
-
-        /* Supporto per browser vecchi che non leggono :has (usiamo il classico :target) */
-        #en:target ~ * .it-text { display: none !important; }
-        #en:target ~ * .en-text { display: block !important; }
-        #en:target ~ * span.en-text { display: inline !important; }
     </style>
 </head>
 <body>
-
-    <!-- Target invisibili per attivare il cambio lingua via CSS -->
-    <div id="it"></div>
-    <div id="en"></div>
 
     <!-- Header -->
     <header>
         <div class="container">
             <div class="logo">
                 <h1>SIEL<span>PRO</span></h1>
-                <div class="tagline it-text">Specialisti in tecnologia e sicurezza</div>
-                <div class="tagline en-text">Specialists in technology and security</div>
-            </div>
-            <!-- Pulsanti Selezione Lingua (Link puri che cambiano l'URL) -->
-            <div class="lang-switcher">
-                <a href="#it" id="btn-it" class="lang-btn">IT</a>
-                <a href="#en" id="btn-en" class="lang-btn">EN</a>
+                <div class="tagline">Specialisti in tecnologia e sicurezza</div>
             </div>
         </div>
     </header>
@@ -257,41 +22,62 @@
     <!-- Sezione Principale / Chi Siamo -->
     <section class="hero">
         <div class="container">
-            <div class="it-text">
-                <h2>Bonifiche Elettroniche Ambientali</h2>
-                <p><strong>Dal 1989</strong> offriamo soluzioni professionali ad alto contenuto tecnologico per la tutela della tua privacy e la sicurezza delle tue comunicazioni.</p>
-            </div>
-            <div class="en-text">
-                <h2>Technical Surveillance Counter-Measures (TSCM)</h2>
-                <p><strong>Since 1989</strong> we have been offering high-tech professional solutions to protect your privacy and secure your communications.</p>
-            </div>
+            <h2>Bonifiche Elettroniche Ambientali</h2>
+            <p><strong>Dal 1989</strong> offriamo soluzioni professionali ad alto contenuto tecnologico per la tutela della tua privacy e la sicurezza delle tue comunicazioni.</p>
         </div>
     </section>
 
     <!-- Sezione Competenze/Servizi -->
     <section class="services">
         <div class="container">
-            <h3 class="it-text">I Nostri Settori di Specializzazione</h3>
-            <h3 class="en-text">Our Core Areas of Expertise</h3>
-            
+            <h3>I Nostri Settori di Specializzazione</h3>
             <div class="grid">
-                <!-- Servizio 1 -->
                 <div class="card">
-                    <div class="it-text">
-                        <h4>Bonifiche Ambientali</h4>
-                        <p>Rilevamento e neutralizzazione di microspie, microfoni, localizzatori GPS e sistemi di intercettazione occultati.</p>
-                    </div>
-                    <div class="en-text">
-                        <h4>TSCM / Bug Sweeping</h4>
-                        <p>Detection and neutralization of hidden bugs, microphones, GPS trackers, and covert eavesdropping systems.</p>
-                    </div>
+                    <h4>Bonifiche Ambientali</h4>
+                    <p>Rilevamento e neutralizzazione di microspie, microfoni, localizzatori GPS e sistemi di intercettazione occultati.</p>
                 </div>
-                
-                <!-- Servizio 2 -->
                 <div class="card">
-                    <div class="it-text">
-                        <h4>Telecomunicazioni</h4>
-                        <p>Progettazione, installazione e manutenzione di sistemi e reti di comunicazione sicuri ed efficienti.</p>
-                    </div>
-                    <div class="en-text">
-                        <h4>Telecommunications</h4>
+                    <h4>Telecomunicazioni</h4>
+                    <p>Progettazione, installazione e manutenzione di sistemi e reti di comunicazione sicuri ed efficienti.</p>
+                </div>
+                <div class="card">
+                    <h4>Sicurezza Elettronica</h4>
+                    <p>Sistemi avanzati anti-intrusione, controllo accessi e videosorveglianza professionale per privati e aziende.</p>
+                </div>
+                <div class="card">
+                    <h4>Informatica</h4>
+                    <p>Consulenza IT, sicurezza delle reti informatiche e protezione dei dati aziendali e personali contro minacce digitali.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sezione Contatti -->
+    <section class="contact">
+        <div class="container">
+            <h3>Richiedi una Consulenza Riservata</h3>
+            <p>Mettiti in contatto con i nostri specialisti per ricevere supporto o richiedere un intervento rapido.</p>
+            
+            <div class="contact-buttons">
+                <!-- Bottone Email -->
+                <a href="mailto:sielprolab@gmail.com" class="btn btn-email">
+                    ✉ Scrivici via Email
+                </a>
+                
+                <!-- Bottone WhatsApp -->
+                <a href="https://wa.me" target="_blank" class="btn btn-whatsapp">
+                    💬 Contattaci su WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 SIELPRO. Tutti i diritti riservati. Specialisti in telecomunicazioni, sicurezza ed elettronica dal 1989, SIELPRO GROUP Calle 22 Marbella -  Republica de Panamà - Ruc: 1654987DV32.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+html<!DOCTYPE html>
 <html lang="it">
 <head>
     <meta charset="UTF-8">
@@ -200,30 +200,28 @@
         }
 
         /* ==========================================
-           LOGICA DI CAMBIO LINGUA ROBUSTA (CSS PURE)
+           GESTIONE MOSTRA/NASCONDI TESTI
            ========================================== */
-        
-        /* Di base (quando il body è in modalità IT), nascondiamo le parti inglesi */
-        body.lang-mode-it .en-text {
+        /* Stato iniziale (Italiano): nasconde i testi inglesi */
+        body.lang-it .en-text {
             display: none !important;
         }
         
-        /* Quando il body passa in modalità EN, nascondiamo l'italiano e mostriamo l'inglese */
-        body.lang-mode-en .it-text {
+        /* Stato alternativo (Inglese): nasconde i testi italiani e mostra quelli inglesi */
+        body.lang-en .it-text {
             display: none !important;
         }
-        body.lang-mode-en .en-text {
+        body.lang-en .en-text {
             display: block !important;
         }
         
-        /* Regola speciale per i testi all'interno dei pulsanti (inline) */
-        body.lang-mode-en span.en-text {
+        /* Regola specifica per non rompere l'allineamento dei testi dentro i bottoni */
+        body.lang-en span.en-text {
             display: inline !important;
         }
     </style>
 </head>
-<!-- Inizializziamo il body con la classe della lingua italiana attiva -->
-<body class="lang-mode-it">
+<body class="lang-it"> <!-- Iniziamo in modalità Italiano -->
 
     <!-- Header -->
     <header>
@@ -233,10 +231,10 @@
                 <div class="tagline it-text">Specialisti in tecnologia e sicurezza</div>
                 <div class="tagline en-text">Specialists in technology and security</div>
             </div>
-            <!-- Pulsanti Scelta Lingua -->
+            <!-- Pulsanti Selezione Lingua -->
             <div class="lang-switcher">
-                <button id="btn-it" class="lang-btn active" onclick="setLanguage('it')">IT</button>
-                <button id="btn-en" class="lang-btn" onclick="setLanguage('en')">EN</button>
+                <button id="btn-it" class="lang-btn active">IT</button>
+                <button id="btn-en" class="lang-btn">EN</button>
             </div>
         </div>
     </header>
@@ -296,3 +294,7 @@
                         <h4>Electronic Security</h4>
                         <p>Advanced anti-intrusion systems, access control, and professional video surveillance for individuals and corporate clients.</p>
                     </div>
+                </div>
+                
+                <!-- Servizio 4 -->
+                <div class="card">
